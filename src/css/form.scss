@@ -1,0 +1,139 @@
+/* ============================================================================= 
+06. Form
+================================================================================ */
+form {
+  width: 100%;  
+}
+form label {
+  display: block;
+  margin: 0 0 3px;
+  color: $color-brand-palette-01;
+  font: normal 400 18px/40px $sans-serif-primary;
+  text-transform: uppercase;
+}
+form input,
+form textarea {
+  height: 40px;
+  width: 100%;
+  margin: 0 0 10px 0;
+  padding: 0 7px;
+  background-color: transparent;
+  border: 1px solid $color-brand-palette-03;
+  border-radius: 0px;
+  color: white;
+  font: normal 400 18px/40px $sans-serif-primary;
+  resize: none;
+  @include transition (all, 0.3s, ease-out);
+}
+form input:required,
+form textarea:required {
+  box-shadow: none;
+}
+form input:invalid,
+form textarea:invalid {
+  box-shadow: none;
+}
+form textarea {
+  height: auto;
+  width: calc(100% - 16px);
+  padding: 7px;
+  line-height: 1.4em;
+}
+form input:focus,
+form textarea:focus {
+  background: $color-brand-palette-06;
+  color: $color-brand-palette-10;
+  outline: 0;
+}
+.success,
+.error {
+  display: block;
+  padding: 0 0 10px 0;
+  font-size: 20px;
+  font-weight: 300;
+}
+.form-group {
+	margin-bottom: 0px;
+}
+.web-form {
+  h1 {
+    color: $color-brand-palette-01;
+    font: 500 32px/40px $sans-serif-primary;
+    text-transform: uppercase;
+  }
+  h2 {
+    color: $color-brand-palette-02;
+  }
+}
+/* ============================================================================= 
+06. Form \ Login & Register Forms
+================================================================================ */
+.login-form,
+.register-form {
+  display: block;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 40px;
+}
+.login-msg {
+  margin: 40px 0 0;
+  color: $color-brand-palette-01;
+  text-align: center;
+  a,
+  a:link,
+  a:visited {
+    color: white !important;
+  }
+  a:hover,
+  a:focus {
+    color: $color-brand-palette-02 !important;
+  }
+}
+.lists-container {
+  form {
+    margin: 0 0 40px;
+  }
+  form label {
+    margin: 0 0 3px;
+    color: $color-brand-palette-10;
+    font-weight: 600;
+    text-transform: none;
+  }
+  form input,
+  form textarea {
+    background: transparent;
+    border: 1px solid $color-brand-palette-10;
+    color: $color-brand-palette-10;
+    font: normal 400 18px/40px $sans-serif-primary;
+  }
+  form input:required,
+  form textarea:required {
+    box-shadow: none;
+  }
+  form input:invalid,
+  form textarea:invalid {
+    box-shadow: none;
+  }
+  form textarea {
+    height: auto;
+    width: 100%;
+    padding: 7px;
+    line-height: 1.4em;
+  }
+  form input:focus,
+  form textarea:focus {
+    background: $color-brand-palette-03;
+    color: $color-brand-palette-06;
+    outline: 0;
+  }
+}
+/* ============================================================================= 
+06. Form \ Media Queries
+================================================================================ */
+@media only screen and (max-width: 799px) {
+  .form-row {
+    min-height: 100vh;
+    background: $color-brand-palette-04;
+  }
+}

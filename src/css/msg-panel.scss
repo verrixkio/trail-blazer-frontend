@@ -1,0 +1,201 @@
+/* ============================================================================= 
+07. Message Panel
+================================================================================ */
+.msg-panel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  visibility: hidden;
+  -webkit-transition: visibility 0s 0.6s;
+  transition: visibility 0s 0.6s;
+  z-index: 11;
+}
+/* ============================================================================= 
+07. Message Panel \ Overlay Layer
+================================================================================ */
+.msg-panel::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: transparent;
+  cursor: pointer;
+  -webkit-transition: background 0.3s 0.3s;
+  transition: background 0.3s 0.3s;
+}
+.msg-panel.msg-panel--is-visible {
+  visibility: visible;
+  -webkit-transition: visibility 0s 0s;
+  transition: visibility 0s 0s;
+}
+.msg-panel.msg-panel--is-visible::after {
+  background: rgba(0, 0, 0, 0.6);
+  -webkit-transition: background 0.3s 0s;
+  transition: background 0.3s 0s;
+}
+/* ============================================================================= 
+07. Message Panel \ Close Icon
+================================================================================ */
+.msg-panel__close {
+  position: absolute;
+  top: 30px;
+  right: 0px;
+  height: 24px;
+  width: 24px;
+  display: inline-block;
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+}
+.msg-panel__close::before, .msg-panel__close::after {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 2px;
+  height: 3px;
+  width: 20px;
+  background-color: $color-brand-palette-01;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+.msg-panel__close::before {
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+.msg-panel__close::after {
+  -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+.msg-panel__close:hover {
+  background: transparent;
+}
+.msg-panel__close:hover::before, .msg-panel__close:hover::after {
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+}
+.msg-panel__close:hover::before {
+  -webkit-transform: rotate(220deg);
+      -ms-transform: rotate(220deg);
+          transform: rotate(220deg);
+}
+.msg-panel__close:hover::after {
+  -webkit-transform: rotate(135deg);
+      -ms-transform: rotate(135deg);
+          transform: rotate(135deg);
+}
+.msg-panel--is-visible .msg-panel__close::before {
+  -webkit-animation: cd-close-1 0.6s 0.3s;
+          animation: cd-close-1 0.6s 0.3s;
+}
+.msg-panel--is-visible .msg-panel__close::after {
+  -webkit-animation: cd-close-2 0.6s 0.3s;
+          animation: cd-close-2 0.6s 0.3s;
+}
+@-webkit-keyframes cd-close-1 {
+  0%, 50% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+  }
+}
+@keyframes cd-close-1 {
+  0%, 50% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+  }
+}
+@-webkit-keyframes cd-close-2 {
+  0%, 50% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+  }
+}
+@keyframes cd-close-2 {
+  0%, 50% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+  }
+}
+/* ============================================================================= 
+07. Message Panel \ CD Panel
+================================================================================ */
+.msg-panel__container {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  background: $color-brand-palette-03;
+  background: $color-brand-palette-05;
+  z-index: 10;
+  color: white;
+  -webkit-transition: -webkit-transform 0.3s 0.3s;
+  transition: -webkit-transform 0.3s 0.3s;
+  transition: transform 0.3s 0.3s;
+  transition: transform 0.3s 0.3s, -webkit-transform 0.3s 0.3s;
+}
+.msg-panel--from-right .msg-panel__container {
+  right: 0;
+  -webkit-transform: translate3d(100%, 0, 0);
+          transform: translate3d(100%, 0, 0);
+}
+.msg-panel--from-left .msg-panel__container {
+  left: 0;
+  -webkit-transform: translate3d(-100%, 0, 0);
+          transform: translate3d(-100%, 0, 0);
+}
+.msg-panel--is-visible .msg-panel__container {
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
+}
+/* ============================================================================= 
+07. Message Panel \ CD Panel Content
+================================================================================ */
+.msg-panel__content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 90%;
+  margin: 0 5%;
+  padding: 40px 0 80px;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+/* ============================================================================= 
+07. Message Panel \ Media Queries
+================================================================================ */
+@media only screen and (min-width: 800px) {
+  .msg-panel__container {
+    width: 75%;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .msg-panel__container {
+    width: 50%;
+  }
+}

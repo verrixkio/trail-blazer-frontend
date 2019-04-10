@@ -1,0 +1,111 @@
+/* ============================================================================= 
+03. Typography
+================================================================================ */
+h1, h2, h3, h4, h5, h6 {
+  font-family: $sans-serif-primary;  
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: -0.0125em;
+}
+h1, h2, h3, h4 {
+  font-weight: 700;
+}
+h1 {
+  display: block;
+  margin: 0 0 20px 0;
+  font-size: 42px;
+  line-height: 1.136em;
+  letter-spacing: -0.0375em;
+}
+h2 {
+  margin: 40px 0 20px;
+  font-size: 24px;
+  line-height: 1.136em;
+  text-transform: uppercase;
+}
+h3 {
+  margin: 40px 0 20px;
+  font-size: 20px;
+  line-height: 1.136em;
+}
+h4 {
+  margin: 40px 0 20px;
+  font-size: 18px;
+  line-height: 1.136em;
+  text-transform: none;
+}
+p {
+  margin: 0 0 20px;
+  font-size: 18px;
+  line-height: 1.5em;
+}
+strong {
+  font-weight: 600;
+}
+em {
+  font-style: italic;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+h3.logo-sml {
+  margin: 0 0 5px;
+  color: $color-brand-palette-01;
+  font: 400 16px/24px $sans-serif-primary;
+  text-align: center;
+}
+/* ============================================================================= 
+02. Typography \ Media Queries
+================================================================================ */
+@media only screen and (min-width: 800px) and (max-width: 1279px) {
+  h1 {
+    font-size: 28px;
+  }
+  h2 {
+    font-size: 24px;
+  }
+  h3 {
+    font-size: 20px;
+  }
+  h4 {
+    font-size: 20px;
+  }
+  p, ul, ol {
+    font-size: 18px;
+  }
+}
+@media only screen and (min-width: 380px) and (max-width: 799px) {
+  h1 {
+    font-size: 24px;
+  }
+  h2 {
+    font-size: 24px;
+  }
+  h3 {
+    font-size: 20px;
+  }
+  h4 {
+    font-size: 20px;
+  }
+  p, ul, ol {
+    font-size: 18px;
+  }
+}
+@media only screen and (max-width: 379px) {
+  h1 {
+    font-size: 20px;
+  }
+  h2 {
+    font-size: 22px;
+  }
+  h3 {
+    font-size: 18px;
+  }
+  h4 {
+    font-size: 18px;
+  }
+  p, ul, ol {
+    font-size: 16px;
+  }
+}

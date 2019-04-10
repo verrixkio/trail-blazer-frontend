@@ -1,0 +1,44 @@
+/* ============================================================================= 
+03. Push Menu
+================================================================================ */
+.push-menu {
+  width: 100%;
+  max-width: 200px;
+  margin: 0 auto 60px;
+  .left,
+  .right {
+    display: inline-block;
+    width: calc(50% - 2px);
+    padding: 2px 20px;
+    border: 1px solid $color-brand-palette-03;
+    color: white;
+    font: 400 12px/20px $sans-serif-primary;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    @include transition (all, 0.3s, ease-out);
+    &:hover,
+    &:focus {
+      background: $color-brand-palette-02;  
+    }
+  }
+  .left {
+    background: $color-brand-palette-03;
+  }
+}
+.push-menu.reverse {
+  .left {
+    background: transparent;
+      &:hover,
+      &:focus {
+        background: $color-brand-palette-02;  
+      }
+  }
+  .right {
+    background: $color-brand-palette-03;
+      &:hover,
+      &:focus {
+        background: $color-brand-palette-02;  
+      }
+  }
+}

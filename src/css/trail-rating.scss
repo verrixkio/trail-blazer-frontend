@@ -1,0 +1,29 @@
+/* ============================================================================= 
+12. Trail Rating
+================================================================================ */
+.trail-rating {
+  margin: 20px 0 0;
+}
+.stars {
+  display: block;
+  margin: 20px auto;
+  width: auto;
+    i {
+      display: inline-block;
+      margin: 0 10px 0 0;
+      float: none;
+      width: 48px;
+      height: 48px;
+      background: transparent;
+      border-radius: 0;  
+      color: $color-brand-palette-02;
+      text-align: center;
+      font-size: 48px;
+      line-height: 48px;
+      -webkit-box-shadow: none;
+      box-shadow: none;
+    }
+    i.grey {
+      color: #ccc;
+    }
+}

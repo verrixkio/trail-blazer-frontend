@@ -1,0 +1,31 @@
+/* ============================================================================= 
+11. Landing Page
+================================================================================ */
+.landing-page {
+  display: block;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 40px;
+  border: 1px solid $color-brand-palette-02;
+  h1 {
+    margin: 0 0 40px;
+    color: $color-brand-palette-06;
+    font: 400 16px/1.5em $sans-serif-primary;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  p {
+    color: $color-brand-palette-06;
+    font: 500 22px/1.5em $sans-serif-primary;
+    text-align: center;
+  }
+  .btn.reset {
+    margin: 40px 0 0;
+  }
+}
+@media only screen and (max-width: 799px) {
+  .reset {
+    margin-top: 0;
+  }
+}

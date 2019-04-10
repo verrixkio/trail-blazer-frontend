@@ -1,0 +1,47 @@
+/* ============================================================================= 
+08. Button
+================================================================================ */
+.btn,
+a.btn {
+  margin: 20px 0 0;
+  padding: 10px;
+  width: 100%;
+  background: $color-brand-palette-03;
+  border-color: $color-brand-palette-03;
+  border-radius: 0px;
+  color: $color-brand-palette-06;
+  font: 600 20px/1.5em $sans-serif-primary;
+  text-decoration: none;
+  text-shadow: 0 1px rgba(0,0,0,0.7);
+  text-transform: uppercase;
+  @include transition (all, 0.3s, ease-out);
+  &:hover,
+  &:focus {
+    background: $color-brand-palette-02;
+    border-color: $color-brand-palette-02;
+    color: $color-brand-palette-06;
+  }
+}
+.btn-primary {
+    border-color: none;
+}
+.btn.secondary,
+a.btn.secondary {
+  margin: 20px 0 0;
+  padding: 10px;
+  width: 100%;
+  background: transparent;
+  border: 1px solid $color-brand-palette-03;
+  border-radius: 0px;
+  color: $color-brand-palette-01;
+  font: 400 20px/1.5em $sans-serif-primary;
+  text-decoration: none;
+  text-shadow: 0 1px rgba(0,0,0,0.7);
+  text-transform: none;
+  @include transition (all, 0.3s, ease-out);
+  &:hover,
+  &:focus {
+    border-color: $color-brand-palette-02;
+    color: $color-brand-palette-06;
+  }
+}

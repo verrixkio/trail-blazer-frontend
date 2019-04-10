@@ -1,0 +1,1179 @@
+/*
+
+* Description:    CSS Layout for Trail Blazers Application V1B
+* Date Created:   19/03/29
+* Date Updated:   19/04/08
+
+* 01. Variables
+* 02. Layout
+* 03. Typography
+* 04. Top Menu Bar
+* 05. Bottom Menu Bar
+* 06. Form
+* 07. Message Panel
+* 08. Button
+* 09. Map
+* 10. Trail
+* 11. Trail Pop-up
+* 12. Trail Rating
+
+*/
+@import url("//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+/* ==========================================================================
+Mixins
+========================================================================== */
+/* ==========================================================================
+Variables \ Brand Colours
+========================================================================== */
+/* ==========================================================================
+Variables \ Brand Fonts
+========================================================================== */
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  background: url("../images/trail-blazers-desktop-bg.jpg") no-repeat center center fixed;
+  color: #230A04;
+  font: 300 24px/1.5em "Open Sans", Arial, sans-serif; }
+
+/* ==========================================================================
+Imports
+========================================================================== */
+/* ============================================================================= 
+02. Reset \ HTML5 Boilerplate v4.3.0 | MIT License | http://h5bp.com/
+================================================================================ */
+html,
+button,
+input,
+select,
+textarea {
+  color: #230A04; }
+
+html {
+  font-size: 100%;
+  line-height: 1.4em; }
+
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none; }
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none; }
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #CFB590;
+  border-top: none;
+  margin: 0 0 60px;
+  margin: 0 0 20px;
+  padding: 0; }
+
+audio,
+canvas,
+img,
+video {
+  vertical-align: middle; }
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0; }
+
+textarea {
+  resize: vertical; }
+
+/* ============================================================================= 
+02. Layout
+================================================================================ */
+/* Container holding the image and the text */
+.container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  text-align: center;
+  padding-left: 0px;
+  padding-right: 0px;
+  color: white;
+}
+
+.font-container {
+    color: white;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-bottom: 1em;
+    border-top-width: 1em;
+    padding-top: 0px;
+}
+
+
+/* Bottom left text */
+.bottom-left {
+  position: absolute;
+  bottom: 500px;
+  left: 100px;
+}
+
+/* Top left text */
+.top-left {
+  position: absolute;
+  top: 125px;
+  left: -100px;
+}
+
+/* Top right text */
+.top-right {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+}
+
+/* Bottom right text */
+.bottom-right {
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+}
+
+/* Centered text */
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.primary__header {
+  grid-area: header; }
+
+.primary__footer {
+  grid-area: footer; }
+
+.primary__main {
+  grid-area: main; }
+
+.primary {
+  display: grid;
+  grid-template-areas: "header" "main" "footer";
+  grid-template-columns: 100%;
+  grid-template-rows: 180px  1fr 120px;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  z-index: 0; }
+
+.primary__main {
+  margin: 40px 10px; }
+
+.primary__main.reset {
+  position: absolute;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+ }
+
+@media only screen and (max-width: 799px) {
+  .primary {
+    grid-template-rows: 240px  1fr 120px; } }
+
+/* ============================================================================= 
+03. Typography
+================================================================================ */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Open Sans", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: -0.0125em; }
+
+h1, h2, h3, h4 {
+  font-weight: 700; }
+
+h1 {
+  display: block;
+  margin: 0 0 20px 0;
+  font-size: 42px;
+  line-height: 1.136em;
+  letter-spacing: -0.0375em; }
+
+h2 {
+  margin: 40px 0 20px;
+  font-size: 24px;
+  line-height: 1.136em;
+  text-transform: uppercase; }
+
+h3 {
+  margin: 40px 0 20px;
+  font-size: 20px;
+  line-height: 1.136em; }
+
+h4 {
+  margin: 40px 0 20px;
+  font-size: 18px;
+  line-height: 1.136em;
+  text-transform: none; }
+
+p {
+  margin: 0 0 20px;
+  font-size: 18px;
+  line-height: 1.5em; }
+
+strong {
+  font-weight: 600; }
+
+em {
+  font-style: italic; }
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0; }
+
+h3.logo-sml {
+  margin: 0 0 5px;
+  color: #CFB590;
+  font: 400 16px/24px "Open Sans", Arial, sans-serif;
+  text-align: center; }
+
+/* ============================================================================= 
+02. Typography \ Media Queries
+================================================================================ */
+@media only screen and (min-width: 800px) and (max-width: 1279px) {
+  h1 {
+    font-size: 28px; }
+  h2 {
+    font-size: 24px; }
+  h3 {
+    font-size: 20px; }
+  h4 {
+    font-size: 20px; }
+  p, ul, ol {
+    font-size: 18px; } }
+
+@media only screen and (min-width: 380px) and (max-width: 799px) {
+  h1 {
+    font-size: 24px; }
+  h2 {
+    font-size: 24px; }
+  h3 {
+    font-size: 20px; }
+  h4 {
+    font-size: 20px; }
+  p, ul, ol {
+    font-size: 18px; } }
+
+@media only screen and (max-width: 379px) {
+  h1 {
+    font-size: 20px; }
+  h2 {
+    font-size: 22px; }
+  h3 {
+    font-size: 18px; }
+  h4 {
+    font-size: 18px; }
+  p, ul, ol {
+    font-size: 16px; } }
+
+/* ============================================================================= 
+04. Top Menu Bar
+================================================================================ */
+.primary__top-bar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 75px;
+  padding: 20px;
+  background-color: #49281F;
+  color: #CFB590;
+  -webkit-box-shadow: 1px 4px 4px 0 rgba(0, 0, 0, 0.25);
+  box-shadow: 1px 4px 4px 0 rgba(0, 0, 0, 0.25);
+  z-index: 2; }
+  .primary__top-bar .logo {
+    display: block;
+    padding: 20px 0 10px;
+    padding: 0;
+    margin: 10px 0;
+    border-bottom: none;
+    font: 600 22px/1.5em "Open Sans", Arial, sans-serif;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-shadow: 0 1px rgba(0, 0, 0, 0.8);
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out; }
+    .primary__top-bar .logo:link, .primary__top-bar .logo:visited {
+      color: #CFB590;
+      text-decoration: none; }
+    .primary__top-bar .logo:hover, .primary__top-bar .logo:focus {
+      color: #FFF6E9; }
+  .primary__top-bar p {
+    display: block;
+    margin: 0 0 20px;
+    color: #FFF6E9;
+    font: 400 18px/1.5em "Open Sans", Arial, sans-serif; }
+    .primary__top-bar p span {
+      display: block;
+      margin: 10px 0 5px;
+      font: italic 400 18px/1.5em "Open Sans", Arial, sans-serif; }
+
+.tagline {
+  margin: 0 10px;
+  max-width: 800px; }
+
+@media only screen and (max-width: 799px) {
+  .primary__top-bar {
+    height: 75px; }
+    .primary__top-bar .logo {
+      float: none;
+      font: 600 18px/1.5em "Open Sans", Arial, sans-serif;
+      text-align: center; }
+    .primary__top-bar p {
+      float: none;
+      font-size: 16px;
+      text-align: center; }
+      .primary__top-bar p span {
+        font: italic 400 16px/1.5em "Open Sans", Arial, sans-serif; }
+  .tagline {
+    margin: 10px;
+    padding: 10px; } }
+
+@media only screen and (max-width: 379px) {
+  .primary__top-bar p {
+    font-size: 14px; }
+    .primary__top-bar p span {
+      font: italic 400 14px/1.5em "Open Sans", Arial, sans-serif; } }
+
+/* ============================================================================= 
+05. Bottom Menu Bar
+================================================================================ */
+.primary__btm-bar {
+  z-index: 3;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  padding: 20px;
+  background-color: #49281F;
+  -webkit-box-shadow: 1px -4px 4px 0 rgba(0, 0, 0, 0.25);
+  box-shadow: 1px -4px 4px 0 rgba(0, 0, 0, 0.25);
+  color: white; }
+
+.primary__btm-bar ul {
+  display: block; }
+  .primary__btm-bar ul li {
+    width: 32%; }
+
+.fa {
+  display: block;
+  text-align: center;
+  margin: 0 0 5px;
+  font: normal normal normal 20px/1 FontAwesome; }
+
+.fa.fa-map {
+  margin: 3px 0 5px;
+  font: normal normal normal 17px/1 FontAwesome; }
+
+.navbar-nav {
+  width: 75%;
+  position: absolute;
+  right: -350px;
+  margin: 7.5px 0px;
+  margin-top: -15px }
+
+.nav > li {
+  display: inline-block;
+  width: 16%;
+  margin: 0 1% 0 1%;
+  font: 400 16px/20px "Open Sans", Arial, sans-serif;
+  text-transform: uppercase;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.8); }
+  .nav > li:first-child {
+    margin: 0 1% 0 0; }
+  .nav > li:last-child {
+    margin: 0 0 0 1%; }
+  .nav > li a {
+    color: #CFB590;
+    text-align: center;
+    border: 1px solid #CFB590;
+    border-radius: 4px;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out; }
+    .nav > li a i {
+      color: #9E9A41; }
+
+.navbar-nav > li > a {
+  padding: 10px 15px;
+  height: 70px; }
+
+.nav > li > a:hover,
+.nav > li > a:focus {
+  color: #FFF6E9;
+  text-decoration: none;
+  background-color: transparent;
+  border: 1px solid #FFF6E9; }
+  .nav > li > a:hover i,
+  .nav > li > a:focus i {
+    color: #FFF6E9; }
+
+.navbar-icon-top .navbar-nav > li > a > .fa {
+  position: relative;
+  width: 36px;
+  font-size: 24px; }
+
+.navbar-icon-top .navbar-nav > li > a > .fa {
+  top: 3px;
+  line-height: 12px; }
+
+/* ============================================================================= 
+05. Bottom Menu Bar \ Media Queries
+================================================================================ */
+@media (min-width: 768px) {
+  .navbar-icon-top .navbar-brand {
+    padding: 25px 15px; }
+  .nav > li {
+    font: 600 18px/20px "Open Sans", Arial, sans-serif; }
+  .navbar-nav > li > a {
+    padding-top: 10px;
+    padding-bottom: 10px; }
+  .navbar-icon-top .navbar-text {
+    margin-top: 25px;
+    margin-bottom: 25px; }
+  .navbar-icon-top .navbar-btn {
+    margin-top: 18px;
+    margin-bottom: 18px; }
+  .navbar-icon-top .navbar-nav > li > a {
+    text-align: center;
+    display: table-cell;
+    height: 70px;
+    vertical-align: middle;
+    padding-top: 0;
+    padding-bottom: 0; }
+  .navbar-icon-top .navbar-nav > li > a > .fa {
+    display: block;
+    width: 48px;
+    margin: 2px auto 4px auto;
+    top: 0;
+    line-height: 24px; } }
+
+/* ============================================================================= 
+06. Form
+================================================================================ */
+form {
+  width: 100%; }
+
+form label {
+  display: block;
+  margin: 0 0 3px;
+  color: #CFB590;
+  font: normal 400 18px/40px "Open Sans", Arial, sans-serif;
+  text-transform: uppercase; }
+
+form input,
+form textarea {
+  height: 40px;
+  width: 100%;
+  margin: 0 0 10px 0;
+  padding: 0 7px;
+  background-color: transparent;
+  border: 1px solid #758918;
+  border-radius: 0px;
+  color: white;
+  font: normal 400 18px/40px "Open Sans", Arial, sans-serif;
+  resize: none;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out; }
+
+form input:required,
+form textarea:required {
+  box-shadow: none; }
+
+form input:invalid,
+form textarea:invalid {
+  box-shadow: none; }
+
+form textarea {
+  height: auto;
+  width: calc(100% - 16px);
+  padding: 7px;
+  line-height: 1.4em; }
+
+form input:focus,
+form textarea:focus {
+  background: #FFF6E9;
+  color: #230A04;
+  outline: 0; }
+
+.success,
+.error {
+  display: block;
+  padding: 0 0 10px 0;
+  font-size: 20px;
+  font-weight: 300; }
+
+.form-group {
+  margin-bottom: 0px; }
+
+.web-form h1 {
+  color: #CFB590;
+  font: 500 32px/40px "Open Sans", Arial, sans-serif;
+  text-transform: uppercase; }
+
+.web-form h2 {
+  color: #9E9A41; }
+
+/* ============================================================================= 
+06. Form \ Login & Register Forms
+================================================================================ */
+.login-form,
+.register-form {
+  display: block;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 40px; }
+
+.login-msg {
+  margin: 40px 0 0;
+  color: #CFB590;
+  text-align: center; }
+  .login-msg a,
+  .login-msg a:link,
+  .login-msg a:visited {
+    color: white !important; }
+  .login-msg a:hover,
+  .login-msg a:focus {
+    color: #9E9A41 !important; }
+
+.lists-container form {
+  margin: 0 0 40px; }
+
+.lists-container form label {
+  margin: 0 0 3px;
+  color: #230A04;
+  font-weight: 600;
+  text-transform: none; }
+
+.lists-container form input,
+.lists-container form textarea {
+  background: transparent;
+  border: 1px solid #230A04;
+  color: #230A04;
+  font: normal 400 18px/40px "Open Sans", Arial, sans-serif; }
+
+.lists-container form input:required,
+.lists-container form textarea:required {
+  box-shadow: none; }
+
+.lists-container form input:invalid,
+.lists-container form textarea:invalid {
+  box-shadow: none; }
+
+.lists-container form textarea {
+  height: auto;
+  width: 100%;
+  padding: 7px;
+  line-height: 1.4em; }
+
+.lists-container form input:focus,
+.lists-container form textarea:focus {
+  background: #758918;
+  color: #FFF6E9;
+  outline: 0; }
+
+/* ============================================================================= 
+06. Form \ Media Queries
+================================================================================ */
+@media only screen and (max-width: 799px) {
+  .form-row {
+    min-height: 100vh;
+    background: #564334; } }
+
+/* ============================================================================= 
+07. Message Panel
+================================================================================ */
+.msg-panel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  visibility: hidden;
+  -webkit-transition: visibility 0s 0.6s;
+  transition: visibility 0s 0.6s;
+  z-index: 11; }
+
+/* ============================================================================= 
+07. Message Panel \ Overlay Layer
+================================================================================ */
+.msg-panel::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: transparent;
+  cursor: pointer;
+  -webkit-transition: background 0.3s 0.3s;
+  transition: background 0.3s 0.3s; }
+
+.msg-panel.msg-panel--is-visible {
+  visibility: visible;
+  -webkit-transition: visibility 0s 0s;
+  transition: visibility 0s 0s; }
+
+.msg-panel.msg-panel--is-visible::after {
+  background: rgba(0, 0, 0, 0.6);
+  -webkit-transition: background 0.3s 0s;
+  transition: background 0.3s 0s; }
+
+/* ============================================================================= 
+07. Message Panel \ Close Icon
+================================================================================ */
+.msg-panel__close {
+  position: absolute;
+  top: 30px;
+  right: 0px;
+  height: 24px;
+  width: 24px;
+  display: inline-block;
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap; }
+
+.msg-panel__close::before, .msg-panel__close::after {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 2px;
+  height: 3px;
+  width: 20px;
+  background-color: #CFB590;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden; }
+
+.msg-panel__close::before {
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg); }
+
+.msg-panel__close::after {
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg); }
+
+.msg-panel__close:hover {
+  background: transparent; }
+
+.msg-panel__close:hover::before, .msg-panel__close:hover::after {
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s; }
+
+.msg-panel__close:hover::before {
+  -webkit-transform: rotate(220deg);
+  -ms-transform: rotate(220deg);
+  transform: rotate(220deg); }
+
+.msg-panel__close:hover::after {
+  -webkit-transform: rotate(135deg);
+  -ms-transform: rotate(135deg);
+  transform: rotate(135deg); }
+
+.msg-panel--is-visible .msg-panel__close::before {
+  -webkit-animation: cd-close-1 0.6s 0.3s;
+  animation: cd-close-1 0.6s 0.3s; }
+
+.msg-panel--is-visible .msg-panel__close::after {
+  -webkit-animation: cd-close-2 0.6s 0.3s;
+  animation: cd-close-2 0.6s 0.3s; }
+
+@-webkit-keyframes cd-close-1 {
+  0%, 50% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg); } }
+
+@keyframes cd-close-1 {
+  0%, 50% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg); } }
+
+@-webkit-keyframes cd-close-2 {
+  0%, 50% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg); } }
+
+@keyframes cd-close-2 {
+  0%, 50% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg); } }
+
+/* ============================================================================= 
+07. Message Panel \ CD Panel
+================================================================================ */
+.msg-panel__container {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  background: #758918;
+  background: #49281F;
+  z-index: 10;
+  color: white;
+  -webkit-transition: -webkit-transform 0.3s 0.3s;
+  transition: -webkit-transform 0.3s 0.3s;
+  transition: transform 0.3s 0.3s;
+  transition: transform 0.3s 0.3s, -webkit-transform 0.3s 0.3s; }
+
+.msg-panel--from-right .msg-panel__container {
+  right: 0;
+  -webkit-transform: translate3d(100%, 0, 0);
+  transform: translate3d(100%, 0, 0); }
+
+.msg-panel--from-left .msg-panel__container {
+  left: 0;
+  -webkit-transform: translate3d(-100%, 0, 0);
+  transform: translate3d(-100%, 0, 0); }
+
+.msg-panel--is-visible .msg-panel__container {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-transition-delay: 0s;
+  transition-delay: 0s; }
+
+/* ============================================================================= 
+07. Message Panel \ CD Panel Content
+================================================================================ */
+.msg-panel__content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 90%;
+  margin: 0 5%;
+  padding: 40px 0 80px;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch; }
+
+/* ============================================================================= 
+07. Message Panel \ Media Queries
+================================================================================ */
+@media only screen and (min-width: 800px) {
+  .msg-panel__container {
+    width: 75%; } }
+
+@media only screen and (min-width: 1280px) {
+  .msg-panel__container {
+    width: 50%; } }
+
+/* ============================================================================= 
+08. Button
+================================================================================ */
+.btn,
+a.btn {
+  margin: 20px 0 0;
+  padding: 10px;
+  width: 100%;
+  background: #758918;
+  border-color: #758918;
+  border-radius: 0px;
+  color: #FFF6E9;
+  font: 600 20px/1.5em "Open Sans", Arial, sans-serif;
+  text-decoration: none;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.7);
+  text-transform: uppercase;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out; }
+  .btn:hover, .btn:focus,
+  a.btn:hover,
+  a.btn:focus {
+    background: #9E9A41;
+    border-color: #9E9A41;
+    color: #FFF6E9; }
+
+.btn-primary {
+  border-color: none; }
+
+.btn.secondary,
+a.btn.secondary {
+  margin: 20px 0 0;
+  padding: 10px;
+  width: 100%;
+  background: transparent;
+  border: 1px solid #758918;
+  border-radius: 0px;
+  color: #CFB590;
+  font: 400 20px/1.5em "Open Sans", Arial, sans-serif;
+  text-decoration: none;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.7);
+  text-transform: none;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out; }
+  .btn.secondary:hover, .btn.secondary:focus,
+  a.btn.secondary:hover,
+  a.btn.secondary:focus {
+    border-color: #9E9A41;
+    color: #FFF6E9; }
+
+/* ==========================================================================
+09. Responsive Map
+========================================================================== */
+.iframe-rwd {
+  position: relative;
+  padding-bottom: 65.25%;
+  padding-top: 0;
+  height: 0;
+  min-height: 100%;
+  overflow: hidden;
+  border: 1px solid #CFB590;
+  background: rgba(207, 181, 144, 0.25); }
+  .iframe-rwd iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; }
+
+@media only screen and (max-width: 799px) {
+  .iframe-rwd iframe {
+    padding: 0;
+    border-radius: zero; } }
+
+/* ============================================================================= 
+10. Trail Panel
+================================================================================ */
+.no-gutter > [class*='col-'] {
+  padding-right: 0;
+  padding-left: 0; }
+
+.container-fluid.reset {
+  margin-right: -10px;
+  margin-left: -10px;
+  margin-top: -60px;
+  padding: 0; }
+
+.col-md-6.left {
+  padding: 0 30px; }
+
+.col-md-6.right {
+  padding: 0 30px; }
+
+.lists-container {
+  margin: 0 0 40px;
+  padding: 40px;
+  border-radius: 4px;
+  background: #FFF6E9;
+  color: #230A04;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5); }
+  .lists-container .single-trail {
+    margin: 0 0 20px; }
+  .lists-container h2 {
+    margin: 0 0 20px;
+    color: #758918; }
+  .lists-container h3 {
+    margin: 10px 0; }
+  .lists-container p {
+    font-weight: 400; }
+
+.trail__full-info i,
+.trail__fix-request i,
+.trail__comments i,
+.trail__display-fix-requests i,
+.trail__display-ratings i,
+.trail__add-ratings i {
+  float: left;
+  width: 34px;
+  height: 34px;
+  background-color: #CFB590;
+  border-radius: 100%;
+  color: #758918;
+  text-align: center;
+  font-size: 20px;
+  line-height: 34px;
+  margin: -4px 10px 0 -5px;
+  -webkit-box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.15);
+  box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.15); }
+
+.single-solution {
+  border-bottom: 1px solid #AE8F63;
+  padding: 20px 0; }
+
+@media only screen and (max-width: 799px) {
+  .col-md-6.left {
+    padding: 0 10px; }
+  .col-md-6.right {
+    padding: 0 10px; }
+  .lists-container {
+    margin: 0 0 40px;
+    padding: 20px; } }
+
+/* ============================================================================= 
+10. Trail Pop-up
+================================================================================ */
+.trail-popup {
+  position: relative;
+  display: block;
+  width: 100%;
+  max-width: 800px;
+  margin: 60px auto 20px;
+  padding: 40px 20px 20px;
+  background: #FFF6E9;
+  color: #230A04;
+  font-size: 14px;
+  line-height: 1.5em;
+  vertical-align: top;
+  border-radius: 4px;
+  -webkit-box-shadow: 1px 4px 4px 0 rgba(0, 0, 0, 0.25);
+  box-shadow: 1px 4px 4px 0 rgba(0, 0, 0, 0.25); }
+  .trail-popup h2 {
+    margin: 6px 0 20px 0;
+    color: #758918; }
+  .trail-popup p {
+    margin: 0 0 10px; }
+  .trail-popup strong.green {
+    color: #758918; }
+
+.trail-popup.large {
+  font-size: 2em;
+  padding: 0 1em;
+  min-width: 4em; }
+
+.trail-popup.rounded {
+  border-radius: .4em; }
+
+.trail-popup i {
+  float: left;
+  width: 34px;
+  height: 34px;
+  background: #CFB590;
+  border-radius: 100%;
+  color: #758918;
+  text-align: center;
+  font-size: 20px;
+  line-height: 34px;
+  margin: 0 15px 0 -5px;
+  -webkit-box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.15);
+  box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.15); }
+
+.trail-popup__close {
+  position: absolute;
+  top: 20px;
+  right: 10px;
+  height: 30px;
+  width: 30px;
+  display: inline-block;
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+  box-shadow: none;
+  border: none;
+  background: transparent; }
+
+.trail-popup__close::before, .trail-popup__close::after {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 2px;
+  height: 3px;
+  width: 26px;
+  background-color: #758918;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden; }
+
+.trail-popup__close::before {
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg); }
+
+.trail-popup__close::after {
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg); }
+
+.trail-popup__close:hover {
+  background: transparent; }
+
+.trail-popup__close:hover::before, .trail-popup__close:hover::after {
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s; }
+
+.trail-popup__close:hover::before {
+  -webkit-transform: rotate(220deg);
+  -ms-transform: rotate(220deg);
+  transform: rotate(220deg); }
+
+.trail-popup__close:hover::after {
+  -webkit-transform: rotate(135deg);
+  -ms-transform: rotate(135deg);
+  transform: rotate(135deg); }
+
+.trail-popup--is-visible .trail-popup__close::before {
+  -webkit-animation: cd-close-1 0.6s 0.3s;
+  animation: cd-close-1 0.6s 0.3s; }
+
+.trail-popup--is-visible .trail-popup__close::after {
+  -webkit-animation: cd-close-2 0.6s 0.3s;
+  animation: cd-close-2 0.6s 0.3s; }
+
+@-webkit-keyframes cd-close-1 {
+  0%, 50% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg); } }
+
+@keyframes cd-close-1 {
+  0%, 50% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg); } }
+
+@-webkit-keyframes cd-close-2 {
+  0%, 50% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg); } }
+
+@keyframes cd-close-2 {
+  0%, 50% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg); } }
+
+@media only screen and (max-width: 799px) {
+  .trail-popup {
+    margin: 0 0 20px; } }
+
+/* ============================================================================= 
+12. Trail Rating
+================================================================================ */
+.trail-rating {
+  margin: 20px 0 0; }
+
+.stars {
+  display: block;
+  margin: 20px auto;
+  width: auto; }
+  .stars i {
+    display: inline-block;
+    margin: 0 10px 0 0;
+    float: none;
+    width: 48px;
+    height: 48px;
+    background: transparent;
+    border-radius: 0;
+    color: #9E9A41;
+    text-align: center;
+    font-size: 48px;
+    line-height: 48px;
+    -webkit-box-shadow: none;
+    box-shadow: none; }
+  .stars i.grey {
+    color: #ccc; }
+
+/* ============================================================================= 
+11. Landing Page
+================================================================================ */
+.landing-page {
+  display: block;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 40px;
+  border: 1px solid #9E9A41; }
+  .landing-page h1 {
+    margin: 0 0 40px;
+    color: #FFF6E9;
+    font: 400 16px/1.5em "Open Sans", Arial, sans-serif;
+    text-transform: uppercase;
+    text-align: center; }
+  .landing-page p {
+    color: #FFF6E9;
+    font: 500 22px/1.5em "Open Sans", Arial, sans-serif;
+    text-align: center; }
+  .landing-page .btn.reset {
+    margin: 40px 0 0; }
+
+@media only screen and (max-width: 799px) {
+  .reset {
+    margin-top: 0; } }
+
+/* ============================================================================= 
+03. Push Menu
+================================================================================ */
+.push-menu {
+  width: 100%;
+  max-width: 200px;
+  margin: 0 auto 60px; }
+  .push-menu .left,
+  .push-menu .right {
+    display: inline-block;
+    width: calc(50% - 2px);
+    padding: 2px 20px;
+    border: 1px solid #758918;
+    color: white;
+    font: 400 12px/20px "Open Sans", Arial, sans-serif;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out; }
+    .push-menu .left:hover, .push-menu .left:focus,
+    .push-menu .right:hover,
+    .push-menu .right:focus {
+      background: #9E9A41; }
+  .push-menu .left {
+    background: #758918; }
+
+.push-menu.reverse .left {
+  background: transparent; }
+  .push-menu.reverse .left:hover, .push-menu.reverse .left:focus {
+    background: #9E9A41; }
+
+.push-menu.reverse .right {
+  background: #758918; }
+  .push-menu.reverse .right:hover, .push-menu.reverse .right:focus {
+    background: #9E9A41; }

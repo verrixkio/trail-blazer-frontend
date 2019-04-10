@@ -1,0 +1,82 @@
+/*
+
+* Description:    CSS Layout for Trail Blazers Application V1B
+* Date Created:   19/03/29
+* Date Updated:   19/04/08
+
+* 01. Variables
+* 02. Layout
+* 03. Typography
+* 04. Top Menu Bar
+* 05. Bottom Menu Bar
+* 06. Form
+* 07. Message Panel
+* 08. Button
+* 09. Map
+* 10. Trail
+* 11. Trail Pop-up
+* 12. Trail Rating
+
+*/
+
+@import url("//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+
+/* ==========================================================================
+Mixins
+========================================================================== */
+@mixin transition($what: all, $time: 0.2s, $how: ease-in-out) {
+  -webkit-transition: $what $time $how;
+  -moz-transition:    $what $time $how;
+  -ms-transition:     $what $time $how;
+  -o-transition:      $what $time $how;
+  transition:         $what $time $how;
+}
+
+/* ==========================================================================
+Variables \ Brand Colours
+========================================================================== */
+$color-brand-palette-01: #CFB590;
+$color-brand-palette-02: #9E9A41;
+$color-brand-palette-03: #758918;
+$color-brand-palette-04: #564334;
+$color-brand-palette-05: #49281F;
+$color-brand-palette-06: #FFF6E9;
+$color-brand-palette-07: #F4E2C7;
+$color-brand-palette-08: #AE8F63;
+$color-brand-palette-09: #866940;
+$color-brand-palette-10: #230A04;
+
+/* ==========================================================================
+Variables \ Brand Fonts
+========================================================================== */
+$sans-serif-primary: "Open Sans", Arial, sans-serif;
+$serif-primary: "Merriweather", serif;
+
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  background: url("../images/trail-blazers-desktop-bg.jpg") no-repeat center center fixed;
+  color: $color-brand-palette-10;
+  font: 300 24px/1.5em $sans-serif-primary;
+}
+
+/* ==========================================================================
+Imports
+========================================================================== */
+@import 'reset';
+@import 'layout';
+@import 'typography';
+@import 'top-menu-bar';
+@import 'btm-menu-bar';
+@import 'form';
+@import 'msg-panel';
+@import 'button';
+@import 'iframe';
+@import 'imagehome';
+@import 'trail';
+@import 'trail-popup';
+@import 'trail-rating';
+@import 'landing-page';
+@import 'push-menu';

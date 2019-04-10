@@ -1,0 +1,36 @@
+/* ============================================================================= 
+02. Layout
+================================================================================ */
+.primary__header { grid-area: header; }
+.primary__footer { grid-area: footer; }
+.primary__main { grid-area: main; }
+.primary {
+  display: grid;
+  grid-template-areas: "header"
+  "main"
+  "footer";
+  grid-template-columns: 100%;
+  grid-template-rows: 180px 
+  1fr
+  120px;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  z-index: 0;
+}
+.primary__main { 
+  margin: 40px 10px;
+}
+.primary__main.reset { 
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@media only screen and (max-width: 799px) {
+  .primary {
+    grid-template-rows: 240px 
+    1fr
+    120px;
+  }
+}
